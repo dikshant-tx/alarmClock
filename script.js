@@ -24,11 +24,15 @@ let start = () => {
     if (h == hrs && m == min) {
       play();
       stp.innerHTML = "Stop";
+    } else {
+      stp.innerHTML = "Remove";
     }
   }, 1000);
 };
 //this adds functionality to button and call start() when buttons is pressed
 str.addEventListener("click", () => {
+  clearInterval(interval);
+  interval = null;
   h = document.querySelector("#hrs").value;
   m = document.querySelector("#min").value;
   div2.innerHTML = `Alram Set For: ${h}:${m}`;
@@ -57,4 +61,4 @@ stp.addEventListener("click", () => {
   div2.innerHTML = `Alarm Not Set`;
 });
 
-// console.log(stop);
+console.log(intervl);
